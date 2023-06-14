@@ -12,18 +12,24 @@
     <body>
         <div class="container">
             <div class="header">
-                <ul class="top">
-                    <li>SEARCH BAR</li>
-                    <li>BELL</li>
-                    <li>USER PIC</li>
-                    <li>USER NAME</li>
-                </ul>
-                <ul class="bottom">
-                    <li>"Hi there" ...</li>
-                    <li>A button NEW</li>
-                    <li>A button UPLOAD</li>
-                    <li>A button SHARE</li>
-                </ul>
+                <div class="left-buttons">
+                    <button type="button">New</button>
+                    <button type="button">Upload</button>
+                    <button type="button">Share</button>
+                </div>
+                <div class="search">
+                    <input
+                        type="text"
+                        name="search"
+                        id="search"
+                        maxlength="23"
+                        placeholder="What do you want to search?" />
+                </div>
+                <div class="column-divider"></div>
+                <a href="#"><img src="images/bell-ring-outline.svg" id="bell-ring" alt="Bell image" /></a>
+                <div class="column-divider"></div>
+                <img src="images/naruto.png" id="profile-pic" alt="Naruto image profile photo" />
+                <a href="#">Thiélison Alves</a>
             </div>
             <div class="sidebar">
                 <a href="#" id="dashboard">Dashboard</a>

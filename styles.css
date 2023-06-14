@@ -16,8 +16,9 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr 11fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 110px 1fr;
     height: 100vh;
+    background-color: #f8f9fa;
 }
 
 /* SIDEBAR */
@@ -112,11 +113,89 @@ body {
 
 /* HEADER */
 .header {
-    border: 3px solid lightcoral;
     grid-row: 1;
     grid-column: 2;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px -5px #000000bf;
+    margin: 20px;
+    border-radius: 0.7rem;
+    justify-content: space-around;
+
+    display: grid;
+    grid-template-columns: 1fr 100px 5px 25px 5px 50px 150px;
+    grid-auto-flow: column;
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
 }
 
+.header button {
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 120px;
+    border: none;
+    color: #fff;
+    background-color: #1a1a21;
+    border-radius: 0.7rem;
+    padding: 10px 30px;
+    margin-right: 0.5rem;
+    transition: 0.3s;
+}
+
+.header button:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: #fff;
+    color: #1a1a21;
+    outline: 1px solid #000000bf;
+    box-shadow: 0px 0px 7px -2px #000000bf;
+}
+
+.header .search {
+    justify-self: end;
+}
+
+.header input[type="text"] {
+   background: url("images/magnify.svg") no-repeat center/1.5rem #e9ecef;
+   font-size: 1rem;
+   width: 2rem;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 2rem;
+   transition: width 0.2s ease-in-out;
+}
+
+.header input[type="text"]:focus {
+    background-image: none;
+    width: 250px;
+    outline: 1px solid #6c757d;
+    transition: width 0.2s ease-in-out;
+}
+
+.header .column-divider {
+    height: 60%;
+    border-right: 1px solid #d6d6d6;
+}
+
+.header #bell-ring {
+    height: 1.5rem;
+    margin-top: 3px;
+}
+
+a #bell-ring:hover {
+   background-image: url("images/bell-ring.svg");
+   background-repeat: no-repeat;
+}
+
+.header #profile-pic {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* MAIN CONTENT */
 .main-content {
     border: 3px solid rgb(119, 255, 82);
     grid-row: 2 / 3;
