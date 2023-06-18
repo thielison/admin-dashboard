@@ -1,6 +1,10 @@
 /* GENERAL STYLES */
 :root {
     --sidebar-padding: 35px;
+    --content-margin: 20px;
+    --standard-font: Roboto, sans-serif;
+    --light-text: #828490;
+    --dark-text: #414551;
 }
 
 * {
@@ -9,16 +13,17 @@
     padding: 0;
 }
 
-body {
-    font-family: Roboto, sans-serif;
+body, html {
+    font-family: var(--standard-font);
+    line-height: 1.5;
+    background-color: #f8f9fa;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 11fr;
+    grid-template-columns: 1fr 10fr;
     grid-template-rows: 110px 1fr;
     height: 100vh;
-    background-color: #f8f9fa;
 }
 
 /* SIDEBAR */
@@ -48,66 +53,60 @@ body {
     text-decoration: underline #dee2e6 2px;
 }
 
+.sidebar #dashboard,
+.sidebar #home,
+.sidebar #profile,
+.sidebar #messages,
+.sidebar #history,
+.sidebar #tasks,
+.sidebar #communities,
+.sidebar #settings,
+.sidebar #support,
+.sidebar #privacy {
+    background-repeat: no-repeat;
+    padding-left: var(--sidebar-padding);
+}
+
 .sidebar #dashboard {
     font-size: 1.5rem;
-    background-image: url("images/view-dashboard.svg");
-    background-repeat: no-repeat;
-    background-position: -3px;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/view-dashboard.svg");
+    background-position: -5px;
 }
 
 .sidebar #home {
-    background-image: url("images/home.svg");
-    background-repeat: no-repeat;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/home.svg");
 }
 
 .sidebar #profile {
-    background-image: url("images/profile-card.svg");
-    background-repeat: no-repeat;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/profile-card.svg");
 }
 
 .sidebar #messages {
-    background-image: url("images/messages.svg");
-    background-repeat: no-repeat;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/messages.svg");
 }
 
 .sidebar #history {
-    background-image: url("images/history.svg");
-    background-repeat: no-repeat;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/history.svg");
 }
 
 .sidebar #tasks {
-    background-image: url("images/tasks.svg");
-    background-repeat: no-repeat;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/tasks.svg");
 }
 
 .sidebar #communities {
-    background-image: url("images/communities.svg");
-    background-repeat: no-repeat;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/communities.svg");
 }
 
 .sidebar #settings {
-    background-image: url("images/cog.svg");
-    background-repeat: no-repeat;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/cog.svg");
 }
 
 .sidebar #support {
-    background-image: url("images/help-box.svg");
-    background-repeat: no-repeat;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/help-box.svg");
 }
 
 .sidebar #privacy {
-    background-image: url("images/shield-check.svg");
-    background-repeat: no-repeat;
-    padding-left: var(--sidebar-padding);
+    background-image: url("images/icons/shield-check.svg");
 }
 
 .sidebar .row-divider {
@@ -121,7 +120,7 @@ body {
     grid-column: 2;
     background-color: #ffffff;
     box-shadow: 0px 0px 8px -5px #000000bf;
-    margin: 20px;
+    margin: var(--content-margin);
     padding: 0 20px 0 20px;
     border-radius: 0.7rem;
     min-width: 620px;
@@ -150,7 +149,7 @@ body {
 }
 
 .header button {
-    font-family: Roboto, sans-serif;
+    font-family: var(--standard-font);
     font-weight: 500;
     border: none;
     color: #dee2e6;
@@ -170,7 +169,7 @@ body {
 }
 
 .header input[type="text"] {
-   background: url("images/magnify.svg") no-repeat center/1.5rem #e9ecef;
+   background: url("images/icons/magnify.svg") no-repeat center/1.5rem #e9ecef;
    font-size: 1rem;
    width: 2rem;
    border: none;
@@ -197,7 +196,7 @@ body {
 }
 
 a #bell-ring:hover {
-   background-image: url("images/bell-ring.svg");
+   background-image: url("images/icons/bell-ring.svg");
    background-repeat: no-repeat;
 }
 
@@ -210,7 +209,7 @@ a #bell-ring:hover {
 
 .header a {
     text-decoration: none;
-    color: #6c757d;
+    color: var(--dark-text);
 }
 
 .header a:hover {
@@ -219,26 +218,206 @@ a #bell-ring:hover {
 
 /* MAIN CONTENT */
 .main-content {
-    border: 3px solid rgb(119, 255, 82);
+    margin: var(--content-margin);
     grid-row: 2 / 3;
     grid-column: 2;
 
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 1rem;
-
+    grid-template-columns: 5fr 350px;
+    grid-template-rows: min-content 1fr;
+    gap: 1rem 1.5rem;
+    align-items: start;
 }
 
 .main-content .my-projects {
-    grid-row: 1 / 3;
+    grid-row: 2 / 3;
     grid-column: 1 / 2;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: min-content;
+    min-height: 100%;
+    gap: 0.7rem;
+}
+
+.main-content > p,
+.trending > p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+.trending > p {
+    margin-bottom: 1rem;
+}
+
+.main-content > .right-side-container {
+    display: grid;
+    gap: 2rem;
+}
+
+/* MAIN CONTENT -> CARDS */
+.card {
+    display: grid;
+    grid-template-rows: repeat(2, min-content) 1fr 20px;
+
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px -4px #000000bf;
+    padding: 2rem;
+    border-radius: 0.7rem;
+    
+}
+
+.card .card-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 70px;
+    width: 100%;
+    border-radius: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+.card .image-1 {
+    background-image: url("images/cards/alexander-grey-p203ekCK4Ac-unsplash.jpg"); 
+}
+
+.card .image-2 {
+    background-image: url("images/cards/pawel-czerwinski-10974bBge30-unsplash.jpg"); 
+}
+
+.card .image-3 {
+    background-image: url("images/cards/pawel-czerwinski-60LU05s_JCM-unsplash.jpg"); 
+}
+
+.card .image-4 {
+    background-image: url("images/cards/pawel-czerwinski-8RrXjMCtL5g-unsplash.jpg"); 
+}
+
+.card .image-5 {
+    background-image: url("images/cards/pawel-czerwinski-hNrd99q5peI-unsplash.jpg"); 
+}
+
+.card .image-6 {
+    background-image: url("images/cards/pawel-czerwinski-PBZsk31orGM-unsplash.jpg"); 
+}
+
+.card .image-7 {
+    background-image: url("images/cards/pawel-czerwinski-pRSHSA2H_QU-unsplash.jpg"); 
+}
+
+.card .image-8 {
+    background-image: url("images/cards/pawel-czerwinski-RIEigF6BTBw-unsplash.jpg"); 
+}
+
+.card .image-9 {
+    background-image: url("images/cards/pawel-czerwinski-snrPBiLzZaE-unsplash.jpg"); 
+}
+
+.card .image-10 {
+    background-image: url("images/cards/pawel-czerwinski-XLUuAayDyHs-unsplash.jpg"); 
+}
+
+.card .image-11 {
+    background-image: url("images/cards/pawel-czerwinski-yI4I3OrpB0I-unsplash.jpg"); 
+}
+
+.card .image-12 {
+    background-image: url("images/cards/steve-johnson-5Oe8KFH5998-unsplash.jpg"); 
+}
+
+.my-projects .card h2 {
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+}
+
+.my-projects .card p {
+    color: var(--light-text);
+    margin-bottom: 2rem;
+}
+
+/* MAIN CONTENT -> CARDS -> CARD ICONS (star, eye and share) */
+.card .card-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    width: 100%;
+}
+
+.card .card-icons #star {
+    background-image: url("images/icons/star.svg");
+    width: 20px;
+}
+
+.card .card-icons #eye {
+    background-image: url("images/icons/eye.svg");
+    width: 20px;
+}
+
+.card .card-icons #share {
+    background-image: url("images/icons/share-variant-outline.svg");
+    width: 20px;
+}
+
+/* MAIN CONTENT -> CARDS -> ANNOUNCEMENTS */
+.announcements > .card {
+    display: grid;
+    grid-template-rows: min-content;
     gap: 1rem;
 }
 
-.card {
-    border: 1px solid rgb(0, 0, 0);
+.announcements .row-divider {
+    border-top: 1px solid var(--light-text);
+    width: 100%;
 }
 
+.announcements .card .row > h3 {
+    color: var(--dark-text);
+}
+
+.announcements .card .row > p {
+    color: var(--light-text);
+}
+
+/* MAIN CONTENT -> CARDS -> TRENDING */
+.trending .card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: min-content;
+    align-items: center;
+    gap: 2rem;
+}
+
+.trending .card .profile-pic {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.trending .card .user-info > h3 {
+    color: var(--dark-text);
+}
+
+.trending .card .user-info > p {
+    color: var(--light-text);
+}
+
+.trending .card .user-1 {
+    background-image: url("images/user-profile-pics/jim.png");
+}
+
+.trending .card .user-2 {
+    background-image: url("images/user-profile-pics/michael.jpg");
+}
+
+.trending .card .user-3 {
+    background-image: url("images/user-profile-pics/dwight.jpeg");
+}
+
+.trending .card .user-4 {
+    background-image: url("images/user-profile-pics/pam.jpeg");
+}
