@@ -265,10 +265,15 @@ a #bell-ring:hover {
     box-shadow: 0px 0px 5px -4px #000000bf;
     padding: 2rem;
     border-radius: 0.7rem;
-    
+    transition: 0.2s;
 }
 
-.card .card-image {
+.my-projects .card:hover {
+   box-shadow: 0px 0px 5px 1px #006d77;
+   outline: 1px solid #a8dadc;
+}
+
+.my-projects .card .card-image {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -278,51 +283,51 @@ a #bell-ring:hover {
     margin-bottom: 2rem;
 }
 
-.card .image-1 {
+.my-projects .card .image-1 {
     background-image: url("images/cards/alexander-grey-p203ekCK4Ac-unsplash.jpg"); 
 }
 
-.card .image-2 {
+.my-projects .card .image-2 {
     background-image: url("images/cards/pawel-czerwinski-10974bBge30-unsplash.jpg"); 
 }
 
-.card .image-3 {
+.my-projects .card .image-3 {
     background-image: url("images/cards/pawel-czerwinski-60LU05s_JCM-unsplash.jpg"); 
 }
 
-.card .image-4 {
+.my-projects .card .image-4 {
     background-image: url("images/cards/pawel-czerwinski-8RrXjMCtL5g-unsplash.jpg"); 
 }
 
-.card .image-5 {
+.my-projects .card .image-5 {
     background-image: url("images/cards/pawel-czerwinski-hNrd99q5peI-unsplash.jpg"); 
 }
 
-.card .image-6 {
+.my-projects .card .image-6 {
     background-image: url("images/cards/pawel-czerwinski-PBZsk31orGM-unsplash.jpg"); 
 }
 
-.card .image-7 {
+.my-projects .card .image-7 {
     background-image: url("images/cards/pawel-czerwinski-pRSHSA2H_QU-unsplash.jpg"); 
 }
 
-.card .image-8 {
+.my-projects .card .image-8 {
     background-image: url("images/cards/pawel-czerwinski-RIEigF6BTBw-unsplash.jpg"); 
 }
 
-.card .image-9 {
+.my-projects .card .image-9 {
     background-image: url("images/cards/pawel-czerwinski-snrPBiLzZaE-unsplash.jpg"); 
 }
 
-.card .image-10 {
+.my-projects .card .image-10 {
     background-image: url("images/cards/pawel-czerwinski-XLUuAayDyHs-unsplash.jpg"); 
 }
 
-.card .image-11 {
+.my-projects .card .image-11 {
     background-image: url("images/cards/pawel-czerwinski-yI4I3OrpB0I-unsplash.jpg"); 
 }
 
-.card .image-12 {
+.my-projects .card .image-12 {
     background-image: url("images/cards/steve-johnson-5Oe8KFH5998-unsplash.jpg"); 
 }
 
